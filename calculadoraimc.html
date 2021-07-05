@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title>IMC</title>
+		<meta charset="utf-8"/>
+		 
+		<style type="text/css">
+		</style>
+		
+		<script type="text/javascript">
+			
+
+
+
+			function imc(){
+				var msg = document.getElementById("resultado");
+				var img = document.getElementById("imagem");
+
+				var p = document.getElementById("peso").value;
+				var a = document.getElementById("altura").value;
+				var imc = p/ Math.pow(a,2);// math.pow é o comando para potenciação, ou seja "a,2 =  a elevado a 2"
+					
+				if(imc<18.5){
+
+					msg.innerHTML = "Você está abaixo do peso!";
+					img.src = "thorMagro.png"; 
+				}else if(imc>=18.5 && imc<=24.9){	
+					msg.innerHTML = "Você está no peso ideal!";
+					img.src = "thorForte.png";
+				}else if(imc>24.9){
+					msg.innerHTML = "Você está acima do peso!";
+					img.src = "thorGordo.png";
+				}
+			}
+	
+				alert ("Bem vindo! Calcule aqui seu IMC!");
+		</script>
+
+	</head>
+
+	
+	<body>
+		<form>
+			
+
+			<h3>Cálculo de IMC</h3><br>
+
+			<label for="peso">Peso:&nbsp;&nbsp;&nbsp;&nbsp;<label><input id="peso" Type="number"/> <br><br>
+
+			<label for="altura">Altura: <label><input id="altura"Type="number"/><br><br>
+			<input type="button" value="calcular"onClick="imc()"/>
+
+			</form>
+			<br><br>
+
+
+	<span id="resultado"></span><br>
+	<img id= "imagem" src=""/>
+	
+	</body>	
+</html>
